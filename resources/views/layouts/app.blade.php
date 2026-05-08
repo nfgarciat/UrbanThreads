@@ -53,6 +53,20 @@
                     @endauth
                 </ul>
                 <ul class="navbar-nav ms-auto align-items-center">
+
+                    {{-- Language switcher --}}
+                    <li class="nav-item me-2">
+                        @if(app()->getLocale() === 'es')
+                            <a class="nav-link" href="{{ route('lang.switch', 'en') }}">
+                                <i class="bi bi-translate"></i> EN
+                            </a>
+                        @else
+                            <a class="nav-link" href="{{ route('lang.switch', 'es') }}">
+                                <i class="bi bi-translate"></i> ES
+                            </a>
+                        @endif
+                    </li>
+
                     @auth
                         <li class="nav-item me-3">
                             <span class="budget-badge">
