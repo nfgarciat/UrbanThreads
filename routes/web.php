@@ -9,6 +9,10 @@ $userControllerRoute = 'App\Http\Controllers\UserController';
 $adminHomeControllerRoute = 'App\Http\Controllers\Admin\HomeController';
 $cartControllerRoute = 'App\Http\Controllers\CartController';
 $reviewControllerRoute = 'App\Http\Controllers\ReviewController';
+$languageControllerRoute = 'App\Http\Controllers\LanguageController';
+
+// Language switcher
+Route::get('/lang/{locale}', $languageControllerRoute.'@switchLang')->name('lang.switch');
 
 // Home Controller routes
 Route::get('/', $homeControllerRoute.'@index')->name('home.index');
